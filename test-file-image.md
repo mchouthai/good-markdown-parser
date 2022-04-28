@@ -1,2 +1,2 @@
 ![image](DO-NOT-SHOW-THIS-ITS-AN-IMAGE)
-![notimage](www.google.com)
+[notimage](www.google.com)

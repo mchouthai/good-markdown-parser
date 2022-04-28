@@ -99,5 +99,9 @@ public class MarkdownParseTest {
 
         assertEquals(expected, actual);
     }
+    @Test
+    public void testFails() {
+	    assertEquals("this will fail",5,2+2);
+    }
 }
 

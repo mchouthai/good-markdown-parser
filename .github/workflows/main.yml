@@ -12,5 +12,5 @@ jobs:
     steps:
       -uses: actions/checkout@v2
       -name: junit_tests
-        run: make test
+       run: make test
 

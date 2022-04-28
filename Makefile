@@ -9,7 +9,7 @@ test: build
 	java -cp lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore $(testclasses) 
 
 $(objects): $(sourcefiles)
-	javac -g $(sourcefiles) 
+	javac -cp lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:. -g $(sourcefiles) 
 
 run: MarkdownParse.class
 	java MarkdownParse 

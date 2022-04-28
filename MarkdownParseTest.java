@@ -103,5 +103,13 @@ public class MarkdownParseTest {
     public void testFails() {
 	    assertEquals("this will succeed",8,4+4);
     }
+    @Test
+    public void testImage() throws IOException{
+        List expected = List.of("www.google.com");
+        Path fileName = Path.of("test-file-image.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actual = MarkdownParse.getLinks(content);
+        assertEquals("Should not print link",expected,actual);
+    }
 }
 

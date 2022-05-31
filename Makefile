@@ -18,3 +18,4 @@ build: $(objects)
 
 clean:
 	-rm *.class
+

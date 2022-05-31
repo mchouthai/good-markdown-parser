@@ -7,6 +7,7 @@ import org.junit.*;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.nio.file.Path;
 import java.nio.file.Files;
 
@@ -107,6 +108,33 @@ public class MarkdownParseTest {
     public void testImage() throws IOException{
         List expected = List.of("www.google.com");
         Path fileName = Path.of("test-file-image.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actual = MarkdownParse.getLinks(content);
+        assertEquals("Should not print link",expected,actual);
+    }
+
+    @Test
+    public void testOne() throws IOException{
+        List expected = List.of("url.com", "google.com", "google.com", "ucsd.edu");
+        Path fileName = Path.of("one.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actual = MarkdownParse.getLinks(content);
+        assertEquals("Should not print link",expected,actual);
+    }
+
+    @Test
+    public void testTwo() throws IOException{
+        List expected = List.of("b.com", "a.com", "example.com");
+        Path fileName = Path.of("two.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> actual = MarkdownParse.getLinks(content);
+        assertEquals("Should not print link",expected,actual);
+    }
+
+    @Test
+    public void testThree() throws IOException{
+        List expected = List.of("https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "https://cse.ucsd.edu/");
+        Path fileName = Path.of("three.md");
         String content = Files.readString(fileName);
         ArrayList<String> actual = MarkdownParse.getLinks(content);
         assertEquals("Should not print link",expected,actual);
